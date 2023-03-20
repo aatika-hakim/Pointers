@@ -1,17 +1,25 @@
-// Given an array and a number k, remove all occurrences of k from the array.
+function removeDuplicates(arr , n) {
+    if (n == 0 || n == 1)
+        return n;
 
-const removeDuplicate = (arr) =>{
-    let res = []; //store all the results
-    let sortedArray = arr.sort().slice();
+    // To store index of next unique element
+    var j = 0;
 
-    for(let i=0; i<sortedArray.length-1; i++){
-        if(sortedArray[i+1] === sortedArray[i]){
-                res.push(sortedArray[i].s);
-                }
-            }
-    return res;
+    for (i = 0; i < n - 1; i++)
+        if (arr[i] != arr[i + 1])
+            arr[j++] = arr[i];
+
+    arr[j++] = arr[n - 1];
+
+    return j;
 }
 
-let arr = [2,4,3,7,0,4,1,5,-4];
+  
+    var arr = [ 1, 2, 2, 3, 4, 4, 4, 5, 5 ];
+    var n = arr.length;
 
-console.log(removeDuplicate(arr));
+    n = removeDuplicates(arr, n);
+
+    // Print updated array
+    for (i = 0; i < n; i++)
+        console.log(arr[i] + " ");
