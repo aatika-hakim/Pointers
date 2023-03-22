@@ -1,17 +1,13 @@
-// Given an array and a number k, remove all occurrences of k from the array.
-
-const removeDuplicate = (arr) =>{
-    let res = []; //store all the results
-    let sortedArray = arr.sort().slice();
-
-    for(let i=0; i<sortedArray.length-1; i++){
-        if(sortedArray[i+1] === sortedArray[i]){
-                res.push(sortedArray[i]);
-                }
-            }
-    return res;
+ let removeOccurences = (arr,n) => {
+	let j = 0;
+	for (let i = 0; i < n; i++) {
+		if (arr[i] != n) {
+			arr[j++] = arr[i];
+		}
+	}
+	return j;
 }
+let arr = [1,2,3,5,5,7,6,7,6];
+let n = arr.length;
 
-let arr = [2,4,3,7,0,4,1,5,-4];
-
-console.log(removeDuplicate(arr));
+console.log(removeOccurences(arr,n))
