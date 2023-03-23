@@ -1,4 +1,4 @@
-// Given an array and a number k, find the sum of the subarray that has the maximum sum among all the subarrays of size k.
+// Given an array and a number k, find the sum of the subarray.
 
 const maxSubSum = (arr) => {
     let maxSum = 0;
