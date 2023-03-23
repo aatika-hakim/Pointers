@@ -17,10 +17,11 @@ const  kthElement = (arr1 , arr2 , m , n , k) =>{
 		return sortedArr[k - 1];
 	}
 
-let arr1 = [2,1,4,6,4,3];
-let arr2 = [1,2,6,8,0,-4];
+let arr1 = [2,1,6,4,3];
+let arr2 = [8,0,-4];
 let k = 5;
+let n = Array.length;
 
-console.log(kthElement(arr1, arr2, 5, 4, k));
+console.log(kthElement(arr1, arr2, 5, n, k));
 
 
