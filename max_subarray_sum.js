@@ -1,19 +1,21 @@
-// Given an array and a number k, find the sum of the subarray.
+// Given an array find the sum of the subarray.
 
-const maxSubSum = (arr) => {
+const maxSubArrSum = (arr) => {
     let maxSum = 0;
-    let prefixSum = 0;
+    let currentSum = 0;
 
-    for (let element of arr) { // for each element of arr
-         // add it to prefixSum
-        prefixSum += element;
-        maxSum = Math.max(maxSum, prefixSum); 
-        // zero if negative
-    if (prefixSum < 0) 
-        {
-        prefixSum = 0;
-        } 
+    // iterate through the arr
+    for(let i=0; i<n; i++){ 
+        
+        // store the maximum value
+        currentSum = Math.max(arr[i], currentSum + arr[i]);
+        // store the greater value
+        maxSum = Math.max(currentSum, maxSum);
     }
     return maxSum;
 }
-console.log(maxSubSum([2,3,6,9,3,-1,5,8]));
+
+let arr= [4,6,2,9,-2,5,7];
+let n = arr.length;
+
+console.log(maxSubArrSum(arr,n));
